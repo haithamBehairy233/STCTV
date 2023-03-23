@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on win32)" generated="20230323 10:34:36.079" rpa="false" schemaversion="3">
+<suite id="s1" name="StcTv" source="C:\Users\hbehairy\Downloads\StcTv">
+<suite id="s1-s1" name="Tests" source="C:\Users\hbehairy\Downloads\StcTv\Tests">
+<suite id="s1-s1-s1" name="Test1" source="C:\Users\hbehairy\Downloads\StcTv\Tests\Test1.robot">
+<test id="s1-s1-s1-t1" name="Verify Bahrain Packages Type &amp; Price and Currency" line="39">
+<kw name="Begin Test on server" library="Common_Keywords" type="SETUP">
+<doc>open Url and login to landing page</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230323 10:34:36.407" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230323 10:34:36.406" endtime="20230323 10:34:38.063"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230323 10:34:38.064" level="INFO">Opening url 'https://subscribe.stctv.com/sa-ar?'</msg>
+<status status="PASS" starttime="20230323 10:34:38.063" endtime="20230323 10:34:44.836"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230323 10:34:44.837" endtime="20230323 10:34:44.960"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230323 10:34:44.960" endtime="20230323 10:34:44.961"/>
+</kw>
+<kw name="Remove Tags" library="BuiltIn">
+<arg>fail</arg>
+<doc>Removes given ``tags`` from the current test or all tests in a suite.</doc>
+<msg timestamp="20230323 10:34:44.962" level="INFO">Removed tag 'fail'.</msg>
+<status status="PASS" starttime="20230323 10:34:44.961" endtime="20230323 10:34:44.962"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:36.404" endtime="20230323 10:34:44.963"/>
+</kw>
+<kw name="Assert Default Country" library="LandingPage_Keywords">
+<kw name="Assert Default Country in Landing Page" library="LandingPage_PO">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//span[@id='country-name']</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:44.965" endtime="20230323 10:34:45.612"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//span[@id='country-name']</arg>
+<arg>السعودية</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:45.617" level="INFO">Verifying element 'xpath=//span[@id='country-name']' contains exact text 'السعودية'.</msg>
+<status status="PASS" starttime="20230323 10:34:45.613" endtime="20230323 10:34:46.267"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[@id='arrow']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230323 10:34:46.270" level="INFO">Clicking element 'xpath=//span[@id='arrow']'.</msg>
+<status status="PASS" starttime="20230323 10:34:46.267" endtime="20230323 10:34:46.945"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:44.964" endtime="20230323 10:34:46.946"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:44.964" endtime="20230323 10:34:46.946"/>
+</kw>
+<kw name="Choose Country Bahrain" library="LandingPage_Keywords">
+<kw name="Press Logo Bahrain Country" library="LandingPage_PO">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//a[@id='bh']</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:46.952" endtime="20230323 10:34:47.599"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//a[@id='bh']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230323 10:34:47.600" level="INFO">Clicking link 'xpath=//a[@id='bh']'.</msg>
+<status status="PASS" starttime="20230323 10:34:47.599" endtime="20230323 10:34:52.886"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:46.949" endtime="20230323 10:34:52.887"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:46.947" endtime="20230323 10:34:52.887"/>
+</kw>
+<kw name="Assert Light Packag type,Currency and Price" library="LandingPage_Keywords">
+<arg>${Bahrain_Currency}</arg>
+<arg>${Bahrain_Light_Price}</arg>
+<kw name="Assert Light Package type" library="LandingPage_PO">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//strong[@id='name-لايت']</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:52.889" endtime="20230323 10:34:53.525"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//strong[@id='name-لايت']</arg>
+<arg>لايت</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:53.526" level="INFO">Verifying element 'xpath=//strong[@id='name-لايت']' contains exact text 'لايت'.</msg>
+<status status="PASS" starttime="20230323 10:34:53.525" endtime="20230323 10:34:54.150"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:52.888" endtime="20230323 10:34:54.150"/>
+</kw>
+<kw name="Assert Light Package Currency" library="LandingPage_PO">
+<arg>${Currency}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-لايت']/i</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:54.151" endtime="20230323 10:34:54.789"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-لايت']/i</arg>
+<arg>${Currency}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:54.790" level="INFO">Verifying element 'xpath=//div[@id='currency-لايت']/i' contains exact text '‫دينار بحريني/شهر'.</msg>
+<status status="PASS" starttime="20230323 10:34:54.789" endtime="20230323 10:34:55.428"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:54.151" endtime="20230323 10:34:55.428"/>
+</kw>
+<kw name="Assert Light Package Price" library="LandingPage_PO">
+<arg>${Price}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-لايت']/b</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:55.430" endtime="20230323 10:34:56.056"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-لايت']/b</arg>
+<arg>${Price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:56.057" level="INFO">Verifying element 'xpath=//div[@id='currency-لايت']/b' contains exact text '2'.</msg>
+<status status="PASS" starttime="20230323 10:34:56.056" endtime="20230323 10:34:56.700"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:55.428" endtime="20230323 10:34:56.700"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:52.888" endtime="20230323 10:34:56.700"/>
+</kw>
+<kw name="Assert The Basic Packag type,Currency and Price" library="LandingPage_Keywords">
+<arg>${Bahrain_Currency}</arg>
+<arg>${Bahrain_Basic_Price}</arg>
+<kw name="Assert The Basic Package type" library="LandingPage_PO">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//strong[@id='name-الأساسية']</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:56.702" endtime="20230323 10:34:57.327"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//strong[@id='name-الأساسية']</arg>
+<arg>الأساسية</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:57.329" level="INFO">Verifying element 'xpath=//strong[@id='name-الأساسية']' contains exact text 'الأساسية'.</msg>
+<status status="PASS" starttime="20230323 10:34:57.327" endtime="20230323 10:34:57.963"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:56.702" endtime="20230323 10:34:57.963"/>
+</kw>
+<kw name="Assert The Basic Package Currency" library="LandingPage_PO">
+<arg>${Basic_Currency}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-الأساسية']/i</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:57.964" endtime="20230323 10:34:58.614"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-الأساسية']/i</arg>
+<arg>${Currency}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:58.615" level="INFO">Verifying element 'xpath=//div[@id='currency-الأساسية']/i' contains exact text '‫دينار بحريني/شهر'.</msg>
+<status status="PASS" starttime="20230323 10:34:58.614" endtime="20230323 10:34:59.252"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:57.963" endtime="20230323 10:34:59.252"/>
+</kw>
+<kw name="Assert The Basic Package Price" library="LandingPage_PO">
+<arg>${Basic_Price}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-الأساسية']/b</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:34:59.254" endtime="20230323 10:34:59.891"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-الأساسية']/b</arg>
+<arg>${Price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:34:59.894" level="INFO">Verifying element 'xpath=//div[@id='currency-الأساسية']/b' contains exact text '3'.</msg>
+<status status="PASS" starttime="20230323 10:34:59.892" endtime="20230323 10:35:00.542"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:59.253" endtime="20230323 10:35:00.542"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:56.701" endtime="20230323 10:35:00.543"/>
+</kw>
+<kw name="Assert Premium Packag type,Currency and Price" library="LandingPage_Keywords">
+<arg>${Bahrain_Currency}</arg>
+<arg>${Bahrain_Premium_Price}</arg>
+<kw name="Assert Premium Package type" library="LandingPage_PO">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//strong[@id='name-بريميوم']</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:35:00.546" endtime="20230323 10:35:01.189"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//strong[@id='name-بريميوم']</arg>
+<arg>بريميوم</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:35:01.194" level="INFO">Verifying element 'xpath=//strong[@id='name-بريميوم']' contains exact text 'بريميوم'.</msg>
+<status status="PASS" starttime="20230323 10:35:01.191" endtime="20230323 10:35:01.828"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:00.545" endtime="20230323 10:35:01.828"/>
+</kw>
+<kw name="Assert Premium Package Currency" library="LandingPage_PO">
+<arg>${Premium_Currency}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-بريميوم']/i</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:35:01.830" endtime="20230323 10:35:02.475"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-بريميوم']/i</arg>
+<arg>${Currency}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:35:02.477" level="INFO">Verifying element 'xpath=//div[@id='currency-بريميوم']/i' contains exact text '‫دينار بحريني/شهر'.</msg>
+<status status="PASS" starttime="20230323 10:35:02.476" endtime="20230323 10:35:03.117"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:01.829" endtime="20230323 10:35:03.117"/>
+</kw>
+<kw name="Assert Premium Package Price" library="LandingPage_PO">
+<arg>${Premium_Price}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-بريميوم']/b</arg>
+<arg>${waitingTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230323 10:35:03.118" endtime="20230323 10:35:03.752"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@id='currency-بريميوم']/b</arg>
+<arg>${Price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230323 10:35:03.753" level="INFO">Verifying element 'xpath=//div[@id='currency-بريميوم']/b' contains exact text '6'.</msg>
+<status status="PASS" starttime="20230323 10:35:03.752" endtime="20230323 10:35:04.383"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:03.117" endtime="20230323 10:35:04.383"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:00.544" endtime="20230323 10:35:04.383"/>
+</kw>
+<kw name="End Test on server" library="Common_Keywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Add Cookie is falied</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20230323 10:35:04.385" endtime="20230323 10:35:04.385"/>
+</kw>
+<kw name="Run Keyword If Test Passed" library="BuiltIn">
+<arg>Add Cookie is passed</arg>
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<kw name="Add Cookie is passed" library="Common_Keywords">
+<kw name="Add Cookie" library="SeleniumLibrary">
+<arg>zaleniumTestPassed</arg>
+<arg>true</arg>
+<doc>Adds a cookie to your current session.</doc>
+<status status="PASS" starttime="20230323 10:35:04.386" endtime="20230323 10:35:04.700"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:04.386" endtime="20230323 10:35:04.700"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:04.385" endtime="20230323 10:35:04.700"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230323 10:35:04.701" endtime="20230323 10:35:07.073"/>
+</kw>
+<status status="PASS" starttime="20230323 10:35:04.384" endtime="20230323 10:35:07.073"/>
+</kw>
+<status status="PASS" starttime="20230323 10:34:36.402" endtime="20230323 10:35:07.074"/>
+</test>
+<status status="PASS" starttime="20230323 10:34:36.120" endtime="20230323 10:35:07.076"/>
+</suite>
+<status status="PASS" starttime="20230323 10:34:36.116" endtime="20230323 10:35:07.079"/>
+</suite>
+<status status="PASS" starttime="20230323 10:34:36.083" endtime="20230323 10:35:07.082"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="StcTv">StcTv</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">StcTv.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test1">StcTv.Tests.Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
